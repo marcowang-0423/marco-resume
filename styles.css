@@ -536,3 +536,77 @@ footer {
     .timeline-header { flex-direction: column; gap: 4px; }
     .exp-header { flex-direction: column; align-items: flex-start; }
 }
+
+/* ===== Animations ===== */
+
+/* Nav underline slide */
+.nav-links a {
+    position: relative;
+}
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.22s ease, left 0.22s ease;
+}
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 60%;
+    left: 20%;
+}
+
+/* Scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.45s ease-out, transform 0.45s ease-out;
+}
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Card hover lift */
+.timeline-content,
+.exp-card,
+.pub-item,
+.skill-group,
+.contact-item {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.timeline-content:hover,
+.exp-card:hover,
+.pub-item:hover,
+.skill-group:hover,
+.contact-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.07);
+}
+
+/* Btn hover lift */
+.btn-primary,
+.btn-secondary {
+    transition: background 0.15s, border-color 0.15s, color 0.15s, transform 0.15s;
+}
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: translateY(-1px);
+}
+
+/* Hero photo hover */
+.hero-photo {
+    transition: box-shadow 0.25s ease;
+}
+.hero-photo:hover {
+    box-shadow: 0 0 0 4px rgba(29, 52, 97, 0.15);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .timeline-content, .exp-card, .pub-item, .skill-group, .contact-item { transition: none; }
+}

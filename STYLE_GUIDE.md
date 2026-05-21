@@ -226,12 +226,18 @@ section id 為 `experience`，標題顯示「工作 & 研究經歷」。
 
 ## RWD 斷點
 
-| 斷點      | 行為                                                         |
-|-----------|--------------------------------------------------------------|
-| `≤ 960px` | contact grid 3 欄 → 2 欄                                    |
-| `≤ 820px` | 雙欄 grid 改單欄；section padding 縮小；hero photo 縮小     |
-| `≤ 720px` | Navbar 漢堡選單；timeline/exp header 改直排                  |
-| `≤ 640px` | contact grid 單欄；hero 置中直排；全面縮小字體與間距         |
+| 斷點      | 行為                                                                                      |
+|-----------|-------------------------------------------------------------------------------------------|
+| `≤ 960px` | contact grid 3 欄 → 2 欄                                                                 |
+| `≤ 880px` | EN 版漢堡選單觸發（英文 navbar 較長）                                                     |
+| `≤ 820px` | 雙欄 grid 改單欄；section padding 縮小；hero photo 縮小；affil 字縮小；EN timeline/exp 改直排 |
+| `≤ 760px` | hero-contact 3 欄 → 2 欄；photo/gap 再縮；affil 字更小；hero-title 縮小                 |
+| `≤ 720px` | ZH Navbar 漢堡選單；ZH timeline/exp header 改直排                                         |
+| `≤ 640px` | hero 置中直排；hero-contact 改 flex 垂直；全面縮小間距                                   |
+
+**流體字體：**
+- `.hero-name`：`clamp(1.75rem, 4.5vw, 2.6rem)` — 不使用固定斷點值，依寬度平滑縮放
+- `.timeline-header h3`、`.exp-header h3`：加 `min-width:0` + `overflow-wrap: break-word` 防止被日期欄位擠壓
 
 ---
 

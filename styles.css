@@ -117,6 +117,22 @@ strong { color: var(--heading); }
     height: 2px;
     background: var(--text);
     border-radius: 2px;
+    transform-origin: center;
+    transition: transform 0.3s ease, opacity 0.2s ease, background-color 0.2s ease;
+}
+
+/* Hamburger → X morph */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+    background: var(--accent);
+}
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+    background: var(--accent);
 }
 
 /* ===== Container ===== */
@@ -795,7 +811,7 @@ footer {
 
 @media (max-width: 720px) {
     .nav-links {
-        display: none;
+        display: flex;
         position: absolute;
         top: 64px;
         left: 0;
@@ -806,10 +822,21 @@ footer {
         padding: 6px 12px 12px;
         gap: 2px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: max-height 0.32s ease, opacity 0.25s ease, transform 0.25s ease;
     }
     .nav-links li { width: 100%; }
     .nav-links a  { display: block; padding: 10px 14px; border-radius: var(--radius); }
-    .nav-links.open { display: flex; }
+    .nav-links.open {
+        max-height: 320px;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
     .hamburger { display: flex; }
 
     .timeline-header { flex-direction: column; gap: 4px; }
@@ -820,7 +847,7 @@ footer {
 /* ===== English version RWD (longer text needs earlier breakpoints) ===== */
 @media (max-width: 880px) {
     .lang-en .nav-links {
-        display: none;
+        display: flex;
         position: absolute;
         top: 64px; left: 0; right: 0;
         background: var(--bg);
@@ -829,10 +856,21 @@ footer {
         padding: 6px 12px 12px;
         gap: 2px;
         box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: max-height 0.32s ease, opacity 0.25s ease, transform 0.25s ease;
     }
     .lang-en .nav-links li { width: 100%; }
     .lang-en .nav-links a { display: block; padding: 10px 14px; border-radius: var(--radius); }
-    .lang-en .nav-links.open { display: flex; }
+    .lang-en .nav-links.open {
+        max-height: 320px;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
     .lang-en .hamburger { display: flex; }
 }
 

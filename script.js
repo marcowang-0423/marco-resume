@@ -24,9 +24,27 @@ sections.forEach((s) => navObserver.observe(s));
 const hamburger    = document.getElementById('hamburger');
 const navLinksList = document.getElementById('nav-links');
 
-hamburger.addEventListener('click', () => navLinksList.classList.toggle('open'));
+hamburger.addEventListener('click', () => {
+    const isOpen = navLinksList.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+});
+
 navLinksList.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => navLinksList.classList.remove('open'));
+    link.addEventListener('click', () => {
+        navLinksList.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+    });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navLinksList.contains(e.target)) {
+        navLinksList.classList.remove('open');
+        hamburger.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+    }
 });
 
 // ── Scroll reveal ──────────────────────────────────────────────────────────

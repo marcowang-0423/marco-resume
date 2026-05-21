@@ -80,6 +80,24 @@ strong { color: var(--heading); }
     text-decoration: none;
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lang-toggle {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: 3px 8px;
+    letter-spacing: 0.5px;
+    transition: color 0.15s, border-color 0.15s;
+}
+.lang-toggle:hover { color: var(--accent); border-color: var(--accent); text-decoration: none; }
+
 .hamburger {
     display: none;
     flex-direction: column;

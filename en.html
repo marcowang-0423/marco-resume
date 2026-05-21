@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>王思喬 — 個人簡歷</title>
+    <title>Marco Wang — Resume</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231d3461'/><text x='16' y='22' text-anchor='middle' font-family='sans-serif' font-size='14' font-weight='700' fill='white'>MW</text></svg>">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="王思喬 — 個人簡歷">
-    <meta property="og:description" content="國立清華大學資訊工程碩士生，研究 Social IoT、Rate-Splitting Multiple Access 與 Edge Computing。">
+    <meta property="og:title" content="Marco Wang — Resume">
+    <meta property="og:description" content="CS Master's student at National Tsing Hua University, researching Social IoT, Rate-Splitting Multiple Access, and Edge Computing.">
     <meta property="og:image" content="https://marcowang-0423.github.io/marco-resume/assets/profile.jpg">
-    <meta property="og:url" content="https://marcowang-0423.github.io/marco-resume/">
+    <meta property="og:url" content="https://marcowang-0423.github.io/marco-resume/en.html">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -19,19 +19,19 @@
     <!-- ===== Navbar ===== -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="nav-brand">王思喬</div>
+            <div class="nav-brand">Marco Wang</div>
             <ul class="nav-links" id="nav-links">
-                <li><a href="#about">關於我</a></li>
-                <li><a href="#education">學歷</a></li>
-                <li><a href="#experience">研究經歷</a></li>
-                <li><a href="#publications">發表與榮譽</a></li>
-                <li><a href="#courses">修課紀錄</a></li>
-                <li><a href="#skills">技術能力</a></li>
-                <li><a href="#contact">聯絡方式</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-right">
-                <a href="en.html" class="lang-toggle">EN</a>
-                <button class="hamburger" id="hamburger" aria-label="選單">
+                <a href="index.html" class="lang-toggle">中</a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
                     <span></span><span></span><span></span>
                 </button>
             </div>
@@ -42,24 +42,24 @@
     <section id="hero">
         <div class="container">
             <div class="hero-card">
-                <img class="hero-photo" src="assets/profile.jpg" alt="王思喬" onerror="this.style.display='none'">
+                <img class="hero-photo" src="assets/profile.jpg" alt="Marco Wang" onerror="this.style.display='none'">
                 <div class="hero-info">
                     <div class="hero-name-row">
-                        <h1 class="hero-name">王思喬</h1>
-                        <span class="hero-title">資訊工程碩士生</span>
+                        <h1 class="hero-name">Marco Wang</h1>
+                        <span class="hero-title">CS Master's Student</span>
                     </div>
                     <div class="hero-affiliations">
                         <span class="affil-item">
-                            <img src="assets/nthu-logo.png" class="affil-logo" alt="清華大學">
-                            <span>國立清華大學</span>
+                            <img src="assets/nthu-logo.png" class="affil-logo" alt="NTHU">
+                            <span>National Tsing Hua University</span>
                         </span>
                         <span class="affil-sep">·</span>
                         <span class="affil-item">
-                            <img src="assets/mnet-logo.png" class="affil-logo" alt="多媒體網路實驗室">
-                            <span>多媒體網路實驗室</span>
+                            <img src="assets/mnet-logo.png" class="affil-logo" alt="Multimedia Network Lab">
+                            <span>Multimedia Network Lab</span>
                         </span>
                     </div>
-                    <p class="hero-sub">指導教授：陳文村教授</p>
+                    <p class="hero-sub">Advisor: Prof. Wen-Tsuen Chen</p>
                     <div class="hero-tags">
                         <span>Social IoT</span>
                         <span>Rate-Splitting Multiple Access</span>
@@ -69,9 +69,9 @@
                         <span>Digital Twin</span>
                     </div>
                     <div class="hero-actions">
-                        <a href="#contact" class="btn-primary">聯絡我</a>
-                        <a href="#experience" class="btn-secondary">查看經歷</a>
-                        <a href="assets/resume.pdf" download class="btn-secondary">下載 CV</a>
+                        <a href="#contact" class="btn-primary">Contact Me</a>
+                        <a href="#experience" class="btn-secondary">View Experience</a>
+                        <a href="assets/resume.pdf" download class="btn-secondary">Download CV</a>
                     </div>
                 </div>
             </div>
@@ -81,14 +81,15 @@
     <!-- ===== About ===== -->
     <section id="about">
         <div class="container">
-            <h2 class="section-title"><span class="section-num">01</span> 關於我</h2>
+            <h2 class="section-title"><span class="section-num">01</span> About</h2>
             <div class="about-card">
                 <p>
-                    我對資通訊工程的研究與應用有興趣，具備通訊與機器學習相關的學習與實作經驗。
-                    研究所階段以智慧交通的道路安全危險事件偵測為情境，專注於社交物聯網（SIoT）中的設備選擇與分群研究，
-                    並針對資源分配與效能優化提出方法。
-                    此外，我也參與電腦視覺、數位孿生（Digital Twin）與通訊技術相關的實驗室計畫，
-                    展現良好的學習能力與團隊合作精神。
+                    I am interested in the research and application of information and communications engineering,
+                    with hands-on experience in wireless communications and machine learning.
+                    During my graduate studies, I focused on device selection and grouping in Social Internet of Things (SIoT)
+                    for intelligent transportation scenarios, with an emphasis on resource allocation and performance optimization.
+                    I also contributed to laboratory projects in computer vision, digital twin systems, and wireless communications,
+                    demonstrating strong adaptability and collaborative skills.
                 </p>
             </div>
         </div>
@@ -97,24 +98,24 @@
     <!-- ===== Education ===== -->
     <section id="education">
         <div class="container">
-            <h2 class="section-title"><span class="section-num">02</span> 學歷</h2>
+            <h2 class="section-title"><span class="section-num">02</span> Education</h2>
             <div class="timeline">
 
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <h3>國立清華大學 &nbsp;資訊工程研究所</h3>
+                            <h3>National Tsing Hua University &nbsp;— Dept. of Computer Science</h3>
                             <span class="timeline-date">Jul. 2023 – Aug. 2025</span>
                         </div>
-                        <p class="timeline-sub">碩士班 &nbsp;|&nbsp; 多媒體網路實驗室 &nbsp;|&nbsp; 指導教授：陳文村教授</p>
+                        <p class="timeline-sub">M.S. &nbsp;|&nbsp; Multimedia Network Lab &nbsp;|&nbsp; Advisor: Prof. Wen-Tsuen Chen</p>
                         <ul>
                             <li>
-                                <span class="label">研究領域：</span>
+                                <span class="label">Research Areas:</span>
                                 Social Internet of Things (SIoT);&nbsp; Rate-Splitting Multiple Access (RSMA);&nbsp; Mobile Edge Computing (MEC)
                             </li>
                             <li>
-                                <span class="label">論文題目：</span>
+                                <span class="label">Thesis:</span>
                                 Social Internet of Things Selection and Grouping in Rate Splitting Multiple Access Network
                             </li>
                         </ul>
@@ -125,13 +126,13 @@
                     <div class="timeline-dot"></div>
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <h3>國立台北教育大學 &nbsp;數位科技設計學系</h3>
+                            <h3>National Taipei University of Education &nbsp;— Dept. of Digital Technology Design</h3>
                             <span class="timeline-date">Oct. 2019 – Jun. 2023</span>
                         </div>
-                        <p class="timeline-sub">學士班 &nbsp;|&nbsp; 指導教授：范丙林教授</p>
+                        <p class="timeline-sub">B.S. &nbsp;|&nbsp; Advisor: Prof. Bing-Lin Fan</p>
                         <ul>
-                            <li>Google Developer Student Club 北區聯合黑客松，榮獲 <strong>第二名與創新特別獎</strong></li>
-                            <li>參與第七屆青年黑客松與台灣資安大會</li>
+                            <li>Google Developer Student Club (GDSC) Northern Taiwan Joint Hackathon — <strong>2nd Place &amp; Innovation Special Award</strong></li>
+                            <li>Participated in the 7th Youth Hackathon and Taiwan Security Summit</li>
                         </ul>
                     </div>
                 </div>
@@ -143,32 +144,32 @@
     <!-- ===== Experience ===== -->
     <section id="experience">
         <div class="container">
-            <h2 class="section-title"><span class="section-num">03</span> 工作 &amp; 研究經歷</h2>
+            <h2 class="section-title"><span class="section-num">03</span> Work &amp; Research Experience</h2>
             <div class="exp-grid">
 
                 <div class="exp-card">
                     <div class="exp-header">
-                        <h3>國科會研究助理</h3>
+                        <h3>NSTC Research Assistant</h3>
                         <span class="exp-date">Nov. 2024 – Aug. 2025</span>
                     </div>
-                    <p class="exp-project">知識蒸餾之醫院流程整合 AI Agent 模型</p>
+                    <p class="exp-project">Knowledge Distillation for Hospital Process Integrated AI Agent Model</p>
                     <ul>
-                        <li>比較實驗知識蒸餾（Knowledge Distillation）與其他模型訓練方式，分析差異與效益</li>
-                        <li>整理醫院流程相關需求與資料</li>
-                        <li>定義 AI Agent 的任務範圍與對話流程</li>
+                        <li>Benchmarked knowledge distillation against other training paradigms; analyzed trade-offs in performance and efficiency</li>
+                        <li>Gathered and organized hospital workflow requirements and datasets</li>
+                        <li>Defined task scope and dialogue flows for an AI Agent system</li>
                     </ul>
                 </div>
 
                 <div class="exp-card">
                     <div class="exp-header">
-                        <h3>國科會研究助理</h3>
+                        <h3>NSTC Research Assistant</h3>
                         <span class="exp-date">Sep. 2023 – Oct. 2024</span>
                     </div>
-                    <p class="exp-project">利用數位孿生之智慧交通與不良事件預防系統</p>
+                    <p class="exp-project">Intelligent Transportation &amp; Adverse Event Prevention System via Digital Twin</p>
                     <ul>
-                        <li>BevFusion 物件辨識模型搭建與部署</li>
-                        <li>結合電腦視覺（Computer Vision）及光達（LiDAR）完成物件辨識與追蹤</li>
-                        <li>數位孿生（Digital Twin）之用路人 GPS 定位系統建置</li>
+                        <li>Built and deployed BevFusion object detection model</li>
+                        <li>Integrated computer vision and LiDAR for multi-modal object detection and tracking</li>
+                        <li>Implemented GPS-based road-user positioning module within a Digital Twin framework</li>
                     </ul>
                 </div>
 
@@ -179,11 +180,11 @@
     <!-- ===== Publications & Honors ===== -->
     <section id="publications">
         <div class="container">
-            <h2 class="section-title"><span class="section-num">04</span> 發表與榮譽</h2>
+            <h2 class="section-title"><span class="section-num">04</span> Publications &amp; Honors</h2>
             <div class="pub-sections">
 
                 <div class="pub-group">
-                    <h3 class="pub-group-title">學術發表</h3>
+                    <h3 class="pub-group-title">Academic Publications</h3>
                     <div class="pub-list">
                         <div class="pub-item">
                             <div class="pub-badge pub-journal">
@@ -198,20 +199,20 @@
                 </div>
 
                 <div class="pub-group">
-                    <h3 class="pub-group-title">競賽與榮譽</h3>
+                    <h3 class="pub-group-title">Competitions &amp; Honors</h3>
                     <div class="pub-list">
                         <div class="pub-item">
-                            <span class="pub-badge pub-award">獎項</span>
+                            <span class="pub-badge pub-award">Award</span>
                             <div class="pub-content">
-                                <p>中華電信智慧創新應用大賽暨 5G 加速器徵選活動</p>
-                                <p class="pub-venue"><strong>入圍總決賽</strong> &nbsp;—&nbsp; 數位孿生智慧交通計畫</p>
+                                <p>Chunghwa Telecom Smart Innovation Application Contest &amp; 5G Accelerator Program</p>
+                                <p class="pub-venue"><strong>Advanced to the Final Round</strong> &nbsp;—&nbsp; Digital Twin Intelligent Transportation Project</p>
                             </div>
                         </div>
                         <div class="pub-item">
-                            <span class="pub-badge pub-award">獎項</span>
+                            <span class="pub-badge pub-award">Award</span>
                             <div class="pub-content">
-                                <p>Google Developer Student Club 北區聯合黑客松</p>
-                                <p class="pub-venue"><strong>第二名 &amp; 創新特別獎</strong></p>
+                                <p>Google Developer Student Club (GDSC) Northern Taiwan Joint Hackathon</p>
+                                <p class="pub-venue"><strong>2nd Place &amp; Innovation Special Award</strong></p>
                             </div>
                         </div>
                     </div>
@@ -224,41 +225,41 @@
     <!-- ===== Courses ===== -->
     <section id="courses">
         <div class="container">
-            <h2 class="section-title"><span class="section-num">05</span> 修課紀錄</h2>
+            <h2 class="section-title"><span class="section-num">05</span> Coursework</h2>
             <div class="courses-grid">
 
                 <div class="course-group">
-                    <h3 class="course-group-title">研究所 &nbsp;—&nbsp; 國立清華大學</h3>
+                    <h3 class="course-group-title">Graduate &nbsp;—&nbsp; National Tsing Hua University</h3>
                     <table class="course-table">
-                        <thead><tr><th>課程名稱</th><th>成績</th></tr></thead>
+                        <thead><tr><th>Course</th><th>Grade</th></tr></thead>
                         <tbody>
-                            <tr><td>計算機圖學</td><td class="grade grade-a">A+</td></tr>
-                            <tr><td>物聯網技術與應用</td><td class="grade grade-a">A</td></tr>
-                            <tr><td>網路安全</td><td class="grade grade-a">A</td></tr>
-                            <tr><td>寬頻行動通訊</td><td class="grade grade-a">A-</td></tr>
-                            <tr><td>邊緣人工智慧</td><td class="grade grade-b">B</td></tr>
-                            <tr><td>計算方法設計</td><td class="grade grade-b">B</td></tr>
-                            <tr><td>社群網路</td><td class="grade grade-b">B-</td></tr>
-                            <tr><td>最佳化理論與應用</td><td class="grade grade-b">B-</td></tr>
-                            <tr><td>作業系統</td><td class="grade grade-b">B-</td></tr>
+                            <tr><td>Computer Graphics</td><td class="grade grade-a">A+</td></tr>
+                            <tr><td>IoT Technologies and Applications</td><td class="grade grade-a">A</td></tr>
+                            <tr><td>Network Security</td><td class="grade grade-a">A</td></tr>
+                            <tr><td>Broadband Mobile Communications</td><td class="grade grade-a">A-</td></tr>
+                            <tr><td>Edge AI</td><td class="grade grade-b">B</td></tr>
+                            <tr><td>Computational Methods Design</td><td class="grade grade-b">B</td></tr>
+                            <tr><td>Social Networks</td><td class="grade grade-b">B-</td></tr>
+                            <tr><td>Optimization Theory and Applications</td><td class="grade grade-b">B-</td></tr>
+                            <tr><td>Operating Systems</td><td class="grade grade-b">B-</td></tr>
                         </tbody>
                     </table>
                 </div>
 
                 <div class="course-group">
-                    <h3 class="course-group-title">大學 &nbsp;—&nbsp; 國立台北教育大學</h3>
+                    <h3 class="course-group-title">Undergraduate &nbsp;—&nbsp; National Taipei University of Education</h3>
                     <table class="course-table">
-                        <thead><tr><th>課程名稱</th><th>成績</th></tr></thead>
+                        <thead><tr><th>Course</th><th>Grade</th></tr></thead>
                         <tbody>
-                            <tr><td>資料結構</td><td class="grade grade-a">A+</td></tr>
-                            <tr><td>計算機結構</td><td class="grade grade-a">A+</td></tr>
-                            <tr><td>最佳化演算法</td><td class="grade grade-a">A+</td></tr>
-                            <tr><td>離散數學</td><td class="grade grade-a">A+</td></tr>
-                            <tr><td>電子電路</td><td class="grade grade-a">A+</td></tr>
-                            <tr><td>資料庫系統</td><td class="grade grade-a">A+</td></tr>
-                            <tr><td>電腦網路</td><td class="grade grade-a">A-</td></tr>
-                            <tr><td>數位邏輯設計</td><td class="grade grade-b">B</td></tr>
-                            <tr><td>軟體工程</td><td class="grade grade-b">B-</td></tr>
+                            <tr><td>Data Structures</td><td class="grade grade-a">A+</td></tr>
+                            <tr><td>Computer Architecture</td><td class="grade grade-a">A+</td></tr>
+                            <tr><td>Optimization Algorithms</td><td class="grade grade-a">A+</td></tr>
+                            <tr><td>Discrete Mathematics</td><td class="grade grade-a">A+</td></tr>
+                            <tr><td>Electronic Circuits</td><td class="grade grade-a">A+</td></tr>
+                            <tr><td>Database Systems</td><td class="grade grade-a">A+</td></tr>
+                            <tr><td>Computer Networks</td><td class="grade grade-a">A-</td></tr>
+                            <tr><td>Digital Logic Design</td><td class="grade grade-b">B</td></tr>
+                            <tr><td>Software Engineering</td><td class="grade grade-b">B-</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -270,11 +271,11 @@
     <!-- ===== Skills ===== -->
     <section id="skills">
         <div class="container">
-            <h2 class="section-title"><span class="section-num">06</span> 技術能力</h2>
+            <h2 class="section-title"><span class="section-num">06</span> Skills</h2>
             <div class="skills-grid">
 
                 <div class="skill-group">
-                    <h3>程式語言</h3>
+                    <h3>Programming Languages</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">C / C++</span>
                         <span class="skill-tag">Python</span>
@@ -282,7 +283,7 @@
                 </div>
 
                 <div class="skill-group">
-                    <h3>框架 &amp; 函式庫</h3>
+                    <h3>Frameworks &amp; Libraries</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">PyTorch</span>
                         <span class="skill-tag">TensorFlow</span>
@@ -291,7 +292,7 @@
                 </div>
 
                 <div class="skill-group">
-                    <h3>前端技術</h3>
+                    <h3>Frontend</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">React</span>
                         <span class="skill-tag">HTML5</span>
@@ -300,7 +301,7 @@
                 </div>
 
                 <div class="skill-group">
-                    <h3>資料庫 &amp; DevOps</h3>
+                    <h3>Database &amp; DevOps</h3>
                     <div class="skill-tags">
                         <span class="skill-tag">MySQL</span>
                         <span class="skill-tag">Git</span>
@@ -308,10 +309,10 @@
                 </div>
 
                 <div class="skill-group">
-                    <h3>語言能力</h3>
+                    <h3>Languages</h3>
                     <div class="skill-tags">
-                        <span class="skill-tag">英文 &nbsp;—&nbsp; TOEIC 740</span>
-                        <span class="skill-tag">中文 &nbsp;—&nbsp; 全民中文檢定中高級</span>
+                        <span class="skill-tag">English &nbsp;—&nbsp; TOEIC 740</span>
+                        <span class="skill-tag">Mandarin &nbsp;—&nbsp; Advanced High (TOCFL)</span>
                     </div>
                 </div>
 
@@ -322,7 +323,7 @@
     <!-- ===== Contact ===== -->
     <section id="contact">
         <div class="container">
-            <h2 class="section-title"><span class="section-num">07</span> 聯絡方式</h2>
+            <h2 class="section-title"><span class="section-num">07</span> Contact</h2>
             <div class="contact-grid">
 
                 <div class="contact-item">
@@ -340,7 +341,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.45 4.36a1 1 0 01-.23 1.02L8.5 11a16 16 0 006.5 6.5l1.94-1.95a1 1 0 011.02-.23l4.36 1.45a1 1 0 01.68.95V19a2 2 0 01-2 2C10.17 21 3 13.83 3 5z"/></svg>
                     </div>
                     <div>
-                        <p class="contact-label">電話</p>
+                        <p class="contact-label">Phone</p>
                         <p>0909-802-001</p>
                     </div>
                 </div>
@@ -350,8 +351,8 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
                     </div>
                     <div>
-                        <p class="contact-label">地點</p>
-                        <p>臺灣，新北市</p>
+                        <p class="contact-label">Location</p>
+                        <p>New Taipei City, Taiwan</p>
                     </div>
                 </div>
 
@@ -371,7 +372,7 @@
                     </div>
                     <div>
                         <p class="contact-label">LinkedIn</p>
-                        <a href="https://www.linkedin.com/in/%E6%80%9D%E5%96%AC-%E7%8E%8B-0372953b8/" target="_blank">王思喬</a>
+                        <a href="https://www.linkedin.com/in/%E6%80%9D%E5%96%AC-%E7%8E%8B-0372953b8/" target="_blank">Marco Wang</a>
                     </div>
                 </div>
 
@@ -380,10 +381,10 @@
     </section>
 
     <footer>
-        <p>© 2025 王思喬 &nbsp;·&nbsp; 個人簡歷網站</p>
+        <p>© 2025 Marco Wang &nbsp;·&nbsp; Personal Resume</p>
     </footer>
 
-    <button id="back-to-top" aria-label="回到頂端">
+    <button id="back-to-top" aria-label="Back to top">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 15l7-7 7 7"/></svg>
     </button>
 

@@ -218,8 +218,45 @@ personal-profile-site/
 
 ---
 
+## 多語言
+
+兩個獨立 HTML 檔：`index.html`（中文）、`en.html`（英文），共用同一份 `styles.css` 與 `script.js`。
+
+### 語言切換按鈕（`.lang-toggle`）
+
+放在 navbar 右側，包在 `.nav-right` 中（與 hamburger 同層）：
+
+```html
+<div class="nav-right">
+    <a href="en.html" class="lang-toggle">EN</a>   <!-- 中文頁顯示 EN -->
+    <button class="hamburger" ...>...</button>
+</div>
+```
+
+英文頁的按鈕改為：`<a href="index.html" class="lang-toggle">中</a>`
+
+- 樣式：`border: 1px solid var(--border)`，`font-size: 0.78rem`，`font-weight: 600`
+- hover：`color: var(--accent); border-color: var(--accent)`
+
+### 英文頁對照
+
+| 中文 | 英文 |
+|------|------|
+| 關於我 | About |
+| 學歷 | Education |
+| 工作 & 研究經歷 | Work & Research Experience |
+| 發表與榮譽 | Publications & Honors |
+| 修課紀錄 | Coursework |
+| 技術能力 | Skills |
+| 聯絡方式 | Contact |
+| 國科會研究助理 | NSTC Research Assistant |
+| 學術發表 | Academic Publications |
+| 競賽與榮譽 | Competitions & Honors |
+
+---
+
 ## 擴充備注
 
 - 新增 section：沿用 `section-title` 左邊框格式，卡片沿用白底純邊框
 - 新增 pub 條目：若為 IEEE 類用 logo badge；一般獎項用文字 badge
-- 多語言版本：複製 HTML，CSS 不變
+- 新增語言版本：複製現有 HTML，更新 `lang-toggle` href 與所有文字，CSS 不變

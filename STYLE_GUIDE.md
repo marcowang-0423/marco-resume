@@ -4,35 +4,45 @@
 
 ---
 
+## 設計原則
+
+**目標**：正式、乾淨，適合面試投遞與給主管瀏覽，避免過度科技感。
+
+- 白底為主，不使用漸層背景
+- 卡片只用邊框，無陰影
+- 字型以 Noto Sans TC 為主，monospace 僅限必要（如成績欄位）
+- 無 hover 動畫，無圓角 badge 泡泡
+
+---
+
 ## 色彩系統
 
 | 變數名稱        | 色碼      | 用途                     |
 |-----------------|-----------|--------------------------|
-| `--bg`          | `#0d1117` | 頁面主背景（深黑）        |
-| `--bg-card`     | `#161b22` | 卡片、區塊背景            |
-| `--bg-card2`    | `#1c2128` | 表頭、次級卡片背景        |
-| `--accent`      | `#58a6ff` | 主色調（亮藍）            |
-| `--accent-dim`  | `#1f6feb` | 按鈕、強調用深藍          |
-| `--text`        | `#c9d1d9` | 主要內文                  |
-| `--text-muted`  | `#8b949e` | 次要文字、標籤            |
-| `--heading`     | `#f0f6fc` | 標題、重點文字            |
-| `--border`      | `#30363d` | 所有邊框                  |
-| `--green`       | `#3fb950` | 優良成績（A 等）          |
-| `--yellow`      | `#d29922` | 中等成績（B 等）          |
+| `--bg`          | `#ffffff` | 頁面主背景               |
+| `--bg-alt`      | `#f7f8fa` | 奇偶節交替背景、卡片表頭  |
+| `--accent`      | `#1d3461` | 深海軍藍（主色調）        |
+| `--accent-mid`  | `#2454a4` | 連結、計畫標題            |
+| `--text`        | `#2c3e50` | 主要內文                  |
+| `--text-muted`  | `#6c757d` | 次要文字、日期、標籤      |
+| `--heading`     | `#0d1b2a` | 標題、重點文字            |
+| `--border`      | `#dde1e7` | 所有邊框、分隔線          |
+| `grade-a`       | `#166534` | 優良成績（A 等）          |
+| `grade-b`       | `#92400e` | 中等成績（B 等）          |
 
 ---
 
 ## 字型
 
 ```css
-/* 內文：支援繁體中文 */
+/* 主要字型（內文、標題皆使用） */
 font-family: 'Noto Sans TC', sans-serif;
 
-/* 程式碼、標籤、日期、技術標籤 */
+/* monospace：僅限需要等寬對齊的場合（如成績表格） */
 font-family: 'JetBrains Mono', monospace;
 ```
 
-Google Fonts 引入方式：
+Google Fonts 引入：
 ```html
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 ```
@@ -41,86 +51,113 @@ Google Fonts 引入方式：
 
 ## 排版與間距
 
-| 元素              | 規格                          |
-|-------------------|-------------------------------|
-| Navbar 高度       | `64px`，fixed + blur backdrop |
-| Section padding   | `88px 24px`                   |
-| Container 最大寬  | `1000px`（置中）              |
-| 卡片圓角          | `8px`（`--radius`）           |
-| 卡片邊框          | `1px solid var(--border)`     |
-| Hover 邊框        | `rgba(88, 166, 255, 0.4)`     |
+| 元素              | 規格                                     |
+|-------------------|------------------------------------------|
+| Navbar 高度       | `64px`，白底 + `border-bottom`           |
+| Section padding   | `72px 32px`                              |
+| Container 最大寬  | `960px`（置中）                          |
+| 卡片圓角          | `4px`（`--radius`，小圓角）              |
+| 卡片邊框          | `1px solid var(--border)`，**無陰影**    |
+| 奇偶節背景        | 偶數 section 使用 `var(--bg-alt)`        |
 
 ---
 
-## 區塊編號慣例
+## Hero 區塊
 
-每個 section 標題使用編號前綴（monospace 字型，accent 色）：
+**橫排兩欄佈局：** 照片（左）+ 文字資訊（右）
+
+- 背景：純白，底部加 `border-bottom`
+- 照片：圓形 `160×160px`，`border: 2px solid var(--border)`
+- 研究領域標籤：矩形小標籤（`bg-alt` 底色），非圓角泡泡
+- 不使用 "Hi, 我是" 等對話式文字
 
 ```html
-<h2 class="section-title">
-    <span class="section-num">01</span> 關於我
-</h2>
+<div class="hero-card">
+    <img class="hero-photo" ...>
+    <div class="hero-info">
+        <h1 class="hero-name">王思喬</h1>
+        <p class="hero-title">...</p>
+        <p class="hero-sub">...</p>
+        <div class="hero-tags"><span>...</span></div>
+        <div class="hero-actions">...</div>
+    </div>
+</div>
+```
+
+---
+
+## 區塊標題慣例
+
+左側藍色 `4px` accent border，編號為輔助視覺：
+
+```css
+.section-title {
+    padding-left: 14px;
+    border-left: 4px solid var(--accent);
+}
 ```
 
 ---
 
 ## 元件模式
 
-### 時間軸（Timeline）
-- 左側 `2px solid var(--border)` 垂直線
-- 藍色圓點 `13px`，帶 glow 陰影
-- 卡片內日期標籤：monospace + 淡藍底色
-
 ### 卡片（Card）
-- 背景 `var(--bg-card)`
-- 邊框 `var(--border)`
-- Hover：邊框改為 `rgba(88, 166, 255, 0.4)`
-- 無陰影（flat design）
+- 背景 `var(--bg)`（白）
+- 邊框 `var(--border)`，圓角 `4px`
+- **無 box-shadow**，無 hover 顏色變化
 
-### 標籤（Badge / Tag）
-- Hero badge：圓形邊框，accent 文字
-- 技術 tag：monospace，hover 時邊框變藍
-
-### 按鈕
-- Primary：`var(--accent-dim)` 背景，hover 變 `var(--accent)`
-- Secondary：純邊框，hover 邊框與文字變藍
+### 研究經歷卡片（exp-card）結構
+```html
+<div class="exp-card">
+    <div class="exp-header">          <!-- flex: space-between -->
+        <h3>計畫名稱</h3>
+        <span class="exp-date">日期</span>
+    </div>
+    <p class="exp-project">計畫題目</p>
+    <ul>...</ul>
+</div>
+```
+> `exp-project` 獨立在 `exp-header` 外，避免長標題造成日期跑位。
 
 ### 發表徽章（Pub Badge）
-- IEEE 類：藍色系
-- 獎項類：黃色系（`#d29922` / `#e3b341`）
+- IEEE 類：淡藍底（`#e8edf7`）+ 深藍字
+- 獎項類：淡橘底（`#fdf3e3`）+ 深棕字
 
 ---
 
 ## 導覽列行為
 
-- `IntersectionObserver`：捲動時自動 highlight 對應 nav link
-- 手機版：`hamburger` 按鈕展開選單，點選連結後自動收合
+- `IntersectionObserver`：捲動時 highlight 對應 nav link
+- 手機版：hamburger 按鈕，點選後收合
 
 ---
 
 ## RWD 斷點
 
-| 斷點      | 行為                                      |
-|-----------|-------------------------------------------|
-| `≤ 820px` | 雙欄 grid 改為單欄（Experience、Courses、Skills）|
-| `≤ 720px` | Navbar 改漢堡選單；Hero 字體縮小          |
+| 斷點      | 行為                                                         |
+|-----------|--------------------------------------------------------------|
+| `≤ 820px` | 雙欄 grid 改為單欄                                            |
+| `≤ 720px` | Navbar 漢堡選單；Hero 改置中直排；exp-header 改直排          |
 
 ---
 
 ## 資料夾結構
 
 ```
-src/
-├── index.html    # 主頁面
-├── styles.css    # 所有樣式（CSS Variables 統一管理）
-├── script.js     # Navbar active + hamburger
-└── assets/       # 圖片、照片
+personal-profile-site/
+├── index.html
+├── styles.css
+├── script.js
+├── assets/
+│   └── profile.jpg   # 圓形裁切，160×160px
+├── STYLE_GUIDE.md
+└── README.md
 ```
 
 ---
 
 ## 擴充備注
 
-- 若要加照片：放入 `assets/`，在 Hero 區塊加 `<img>` 或做圓形頭像
-- 若要加 GitHub / LinkedIn 連結：在聯絡方式區塊加 SVG icon + `<a>`
-- 多語言版本：建議複製整個 `src/` 為 `src-en/`，統一 CSS 不變
+- 新增 section：沿用 `section-title` 左邊框格式，卡片沿用白底純邊框
+- 多語言版本：複製 HTML，CSS 不變
+- 若要加 GitHub / LinkedIn：聯絡方式區塊加 SVG icon + `<a>`

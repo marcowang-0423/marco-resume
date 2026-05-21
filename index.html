@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王思喬 — 個人簡歷</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===== Navbar ===== -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">王思喬</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#about">關於我</a></li>
+                <li><a href="#education">學歷</a></li>
+                <li><a href="#experience">研究經歷</a></li>
+                <li><a href="#publications">發表與榮譽</a></li>
+                <li><a href="#courses">修課紀錄</a></li>
+                <li><a href="#skills">技術能力</a></li>
+                <li><a href="#contact">聯絡方式</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="選單">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== Hero ===== -->
+    <section id="hero">
+        <div class="hero-content">
+            <p class="hero-greeting">Hi, 我是</p>
+            <h1 class="hero-name">王思喬</h1>
+            <p class="hero-title">資訊工程碩士生 &nbsp;|&nbsp; 多媒體網路實驗室</p>
+            <p class="hero-sub">國立清華大學 &nbsp;·&nbsp; 指導教授：陳文村教授</p>
+            <div class="hero-badges">
+                <span class="badge">Social IoT</span>
+                <span class="badge">Machine Learning</span>
+                <span class="badge">Edge Computing</span>
+                <span class="badge">Computer Vision</span>
+                <span class="badge">Digital Twin</span>
+            </div>
+            <div class="hero-actions">
+                <a href="#contact" class="btn-primary">聯絡我</a>
+                <a href="#experience" class="btn-secondary">查看經歷</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title"><span class="section-num">01</span> 關於我</h2>
+            <div class="about-card">
+                <p>
+                    我對資通訊工程的研究與應用有興趣，具備通訊與機器學習相關的學習與實作經驗。
+                    研究所階段以智慧交通的道路安全危險事件偵測為情境，專注於社交物聯網（SIoT）中的設備選擇與分群研究，
+                    並針對資源分配與效能優化提出方法。
+                    此外，我也參與電腦視覺、數位孿生（Digital Twin）與通訊技術相關的實驗室計畫，
+                    展現良好的學習能力與團隊合作精神。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Education ===== -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title"><span class="section-num">02</span> 學歷</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>國立清華大學 &nbsp;資訊工程研究所</h3>
+                            <span class="timeline-date">Jul. 2023 – Aug. 2025</span>
+                        </div>
+                        <p class="timeline-sub">碩士班 &nbsp;|&nbsp; 多媒體網路實驗室 &nbsp;|&nbsp; 指導教授：陳文村教授</p>
+                        <ul>
+                            <li>
+                                <span class="label">研究領域：</span>
+                                Social Internet of Things (SIoT);&nbsp; Rate-Splitting Multiple Access;&nbsp; Mobile Edge Computing
+                            </li>
+                            <li>
+                                <span class="label">論文題目：</span>
+                                Social Internet of Things Selection and Grouping in Rate Splitting Multiple Access Network
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>國立台北教育大學 &nbsp;數位科技設計學系</h3>
+                            <span class="timeline-date">Oct. 2019 – Jun. 2023</span>
+                        </div>
+                        <p class="timeline-sub">學士班 &nbsp;|&nbsp; 指導教授：范丙林教授</p>
+                        <ul>
+                            <li>Google Developer Student Club 北區聯合黑客松，榮獲 <strong>第二名與創新特別獎</strong></li>
+                            <li>參與第七屆青年黑客松與台灣資安大會</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Experience ===== -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title"><span class="section-num">03</span> 研究經歷</h2>
+            <div class="exp-grid">
+
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <h3>國科會計畫</h3>
+                            <p class="exp-project">知識蒸餾之醫院流程整合 AI Agent 模型</p>
+                        </div>
+                        <span class="exp-date">Nov. 2024 – Aug. 2025</span>
+                    </div>
+                    <ul>
+                        <li>比較實驗知識蒸餾（Knowledge Distillation）與其他模型訓練方式，分析差異與效益</li>
+                        <li>整理醫院流程相關需求與資料</li>
+                        <li>定義 AI Agent 的任務範圍與對話流程</li>
+                    </ul>
+                </div>
+
+                <div class="exp-card">
+                    <div class="exp-header">
+                        <div>
+                            <h3>國科會計畫</h3>
+                            <p class="exp-project">利用數位孿生之智慧交通與不良事件預防系統</p>
+                        </div>
+                        <span class="exp-date">Sep. 2023 – Oct. 2024</span>
+                    </div>
+                    <ul>
+                        <li>BevFusion 物件辨識模型搭建與部署</li>
+                        <li>結合電腦視覺（Computer Vision）及光達（LiDAR）完成物件辨識與追蹤</li>
+                        <li>數位孿生（Digital Twin）之用路人 GPS 定位系統建置</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Publications & Honors ===== -->
+    <section id="publications">
+        <div class="container">
+            <h2 class="section-title"><span class="section-num">04</span> 發表與榮譽</h2>
+            <div class="pub-list">
+
+                <div class="pub-item">
+                    <span class="pub-badge pub-journal">IEEE</span>
+                    <div class="pub-content">
+                        <p>"Social Internet of Things Selection and Grouping in Rate Splitting Multiple Access Network"</p>
+                        <p class="pub-venue">IEEE GLOBECOM 2025 – IoTSN &nbsp;·&nbsp; <strong>Accepted</strong></p>
+                    </div>
+                </div>
+
+                <div class="pub-item">
+                    <span class="pub-badge pub-award">獎項</span>
+                    <div class="pub-content">
+                        <p>中華電信智慧創新應用大賽暨 5G 加速器徵選活動</p>
+                        <p class="pub-venue"><strong>入圍總決賽</strong> &nbsp;—&nbsp; 數位孿生智慧交通計畫</p>
+                    </div>
+                </div>
+
+                <div class="pub-item">
+                    <span class="pub-badge pub-award">獎項</span>
+                    <div class="pub-content">
+                        <p>Google Developer Student Club 北區聯合黑客松</p>
+                        <p class="pub-venue"><strong>第二名 &amp; 創新特別獎</strong></p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Courses ===== -->
+    <section id="courses">
+        <div class="container">
+            <h2 class="section-title"><span class="section-num">05</span> 修課紀錄</h2>
+            <div class="courses-grid">
+
+                <div class="course-group">
+                    <h3 class="course-group-title">研究所 &nbsp;—&nbsp; 國立清華大學</h3>
+                    <table class="course-table">
+                        <thead>
+                            <tr><th>課程名稱</th><th>成績</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>計算機圖學</td><td class="grade grade-a">A+</td></tr>
+                            <tr><td>物聯網技術與應用</td><td class="grade grade-a">A</td></tr>
+                            <tr><td>網路安全</td><td class="grade grade-a">A</td></tr>
+                            <tr><td>寬頻行動通訊</td><td class="grade grade-a">A-</td></tr>
+                            <tr><td>邊緣人工智慧</td><td class="grade grade-b">B</td></tr>
+                            <tr><td>計算方法設計</td><td class="grade grade-b">B</td></tr>
+                            <tr><td>社群網路</td><td class="grade grade-b">B-</td></tr>
+                            <tr><td>最佳化理論與應用</td><td class="grade grade-b">B-</td></tr>
+                            <tr><td>作業系統</td><td class="grade grade-b">B-</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="course-group">
+                    <h3 class="course-group-title">大學 &nbsp;—&nbsp; 國立台北教育大學</h3>
+                    <table class="course-table">
+                        <thead>
+                            <tr><th>課程名稱</th><th>成績</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>資料結構</td><td class="grade grade-a">A+</td></tr>
+                            <tr><td>計算機結構</td><td class="grade grade-a">A+</td></tr>
+                            <tr><td>最佳化演算法</td><td class="grade grade-a">A+</td></tr>
+                            <tr><td>離散數學</td><td class="grade grade-a">A+</td></tr>
+                            <tr><td>電子電路</td><td class="grade grade-a">A+</td></tr>
+                            <tr><td>資料庫系統</td><td class="grade grade-a">A+</td></tr>
+                            <tr><td>電腦網路</td><td class="grade grade-a">A-</td></tr>
+                            <tr><td>數位邏輯設計</td><td class="grade grade-b">B</td></tr>
+                            <tr><td>軟體工程</td><td class="grade grade-b">B-</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Skills ===== -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title"><span class="section-num">06</span> 技術能力</h2>
+            <div class="skills-grid">
+
+                <div class="skill-group">
+                    <h3>程式語言</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">C / C++</span>
+                        <span class="skill-tag">Python</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>框架 &amp; 函式庫</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">MATLAB</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>前端技術</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <h3>資料庫 &amp; DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Git</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title"><span class="section-num">07</span> 聯絡方式</h2>
+            <div class="contact-grid">
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                    </div>
+                    <div>
+                        <p class="contact-label">Email</p>
+                        <a href="mailto:m0983557762@gmail.com">m0983557762@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.45 4.36a1 1 0 01-.23 1.02L8.5 11a16 16 0 006.5 6.5l1.94-1.95a1 1 0 011.02-.23l4.36 1.45a1 1 0 01.68.95V19a2 2 0 01-2 2C10.17 21 3 13.83 3 5z"/></svg>
+                    </div>
+                    <div>
+                        <p class="contact-label">電話</p>
+                        <p>0909-802-001</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+                    </div>
+                    <div>
+                        <p class="contact-label">地點</p>
+                        <p>臺灣，新北市</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 王思喬 &nbsp;·&nbsp; 個人簡歷網站</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

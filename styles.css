@@ -400,6 +400,24 @@ section:nth-of-type(even):not(#hero) {
     border-bottom: 1px solid var(--border);
 }
 
+.course-category {
+    border-bottom: 1px solid var(--border);
+}
+.course-category:last-child {
+    border-bottom: none;
+}
+
+.category-name {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 8px 16px 4px;
+    background: rgba(29, 52, 97, 0.03);
+    border-bottom: 1px solid var(--border);
+}
+
 .course-table {
     width: 100%;
     border-collapse: collapse;

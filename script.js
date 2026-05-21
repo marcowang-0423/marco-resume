@@ -64,3 +64,14 @@ const revealObserver = new IntersectionObserver(
 );
 
 document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
+
+// ── Back to top ────────────────────────────────────────────────────────────
+const backToTop = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('visible', window.scrollY > 300);
+}, { passive: true });
+
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});

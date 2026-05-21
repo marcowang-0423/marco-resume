@@ -55,6 +55,24 @@ font-family: 'JetBrains Mono', monospace;  /* 成績欄位專用 */
 
 ---
 
+## Favicon
+
+MW 首字母 SVG，深藍底白字，內嵌為 data URI（不需要額外圖片檔）：
+
+```html
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%231d3461'/><text x='16' y='22' text-anchor='middle' font-family='sans-serif' font-size='14' font-weight='700' fill='white'>MW</text></svg>">
+```
+
+## Open Graph meta tags
+
+```html
+<meta property="og:type" content="website">
+<meta property="og:title" content="王思喬 — 個人簡歷">
+<meta property="og:description" content="國立清華大學資訊工程碩士生，研究 Social IoT、Rate-Splitting Multiple Access 與 Edge Computing。">
+<meta property="og:image" content="https://marcowang-0423.github.io/marco-resume/assets/profile.jpg">
+<meta property="og:url" content="https://marcowang-0423.github.io/marco-resume/">
+```
+
 ## Hero 區塊
 
 **橫排兩欄：** 照片（左）+ 文字資訊（右）；mobile 改直排置中
@@ -77,7 +95,11 @@ font-family: 'JetBrains Mono', monospace;  /* 成績欄位專用 */
         </div>
         <p class="hero-sub">指導教授：陳文村教授</p>
         <div class="hero-tags">...</div>
-        <div class="hero-actions">...</div>
+        <div class="hero-actions">
+            <a href="#contact" class="btn-primary">聯絡我</a>
+            <a href="#experience" class="btn-secondary">查看經歷</a>
+            <a href="assets/resume.pdf" download class="btn-secondary">下載 CV</a>
+        </div>
     </div>
 </div>
 ```
@@ -85,6 +107,7 @@ font-family: 'JetBrains Mono', monospace;  /* 成績欄位專用 */
 - 照片：`160px` 圓形，`border: 2px solid var(--border)`
 - Affiliations logo：`height: 34px`，`font-size: 1rem; font-weight: 500`
 - Hero tags：矩形小標籤，`bg-alt` 底色
+- Hero actions：三個按鈕，主要 / 次要 / 次要（下載 CV）
 
 ---
 
@@ -103,11 +126,14 @@ font-family: 'JetBrains Mono', monospace;  /* 成績欄位專用 */
 
 ## 元件模式
 
-### 研究經歷卡片（exp-card）
+### 工作 & 研究經歷卡片（exp-card）
+
+section id 為 `experience`，標題顯示「工作 & 研究經歷」。
+
 ```html
 <div class="exp-card">
     <div class="exp-header">       <!-- flex space-between, align-items: center -->
-        <h3>計畫名稱</h3>
+        <h3>職稱（如：國科會研究助理）</h3>
         <span class="exp-date">日期</span>   <!-- flex-shrink: 0 -->
     </div>
     <p class="exp-project">計畫題目</p>    <!-- 獨立在 header 外 -->
@@ -158,6 +184,8 @@ font-family: 'JetBrains Mono', monospace;  /* 成績欄位專用 */
 | Timeline dot | `.timeline-item:hover .timeline-dot` | `scale(1.5) + glow` |
 | Pub badge | `.pub-item:hover .pub-badge` | `scale(1.06)` |
 | `prefers-reduced-motion` | 全部動畫 | 自動關閉 |
+| Back to top 顯示 | `#back-to-top` | `scroll > 300px` 時出現，`.visible` class，`opacity 0→1`，`0.25s` |
+| Back to top hover | `#back-to-top:hover` | `translateY(-2px)`，`bg → var(--accent-mid)` |
 
 ---
 

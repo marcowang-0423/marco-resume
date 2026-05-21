@@ -605,8 +605,63 @@ footer {
     box-shadow: 0 0 0 4px rgba(29, 52, 97, 0.15);
 }
 
+/* Skill tags — fill on hover */
+.skill-tag {
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.skill-tag:hover {
+    background: var(--accent);
+    color: #ffffff;
+    border-color: var(--accent);
+}
+
+/* Hero tags — lift on hover */
+.hero-tags span {
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    cursor: default;
+}
+.hero-tags span:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    background: #eaeff7;
+}
+
+/* Contact icon — scale on parent hover */
+.contact-icon {
+    transition: transform 0.22s ease;
+}
+.contact-item:hover .contact-icon {
+    transform: scale(1.2);
+}
+
+/* Timeline dot — scale when item is hovered */
+.timeline-dot {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.5);
+    box-shadow: 0 0 0 4px rgba(29, 52, 97, 0.15);
+}
+
+/* Pub badge — slight scale on row hover */
+.pub-badge {
+    transition: transform 0.18s ease;
+}
+.pub-item:hover .pub-badge {
+    transform: scale(1.06);
+}
+
+/* About card left border brightens */
+.about-card {
+    transition: border-left-color 0.25s ease;
+}
+.about-card:hover {
+    border-left-color: var(--accent-mid);
+}
+
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
-    .timeline-content, .exp-card, .pub-item, .skill-group, .contact-item { transition: none; }
+    .timeline-content, .exp-card, .pub-item, .skill-group, .contact-item,
+    .skill-tag, .hero-tags span, .contact-icon, .timeline-dot, .pub-badge { transition: none; }
 }

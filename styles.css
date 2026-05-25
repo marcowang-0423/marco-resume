@@ -1012,8 +1012,10 @@ footer {
 
 /* Reduce motion for accessibility */
 @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
     .reveal { opacity: 1; transform: none; transition: none; }
     .timeline-content, .exp-card, .pub-item, .skill-group, .contact-item,
-    .skill-tag, .hero-tags span, .contact-icon, .timeline-dot, .pub-badge { transition: none; }
+    .skill-tag, .hero-tags span, .contact-icon, .timeline-dot, .pub-badge,
+    .btn-primary, .btn-secondary, .about-card, .hero-photo, .nav-links { transition: none; }
     .hamburger span { transition: none; }
 }

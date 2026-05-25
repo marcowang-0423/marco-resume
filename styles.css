@@ -161,14 +161,40 @@ strong { color: var(--heading); }
     gap: 48px;
 }
 
-.hero-photo {
+.hero-photo-wrap {
     width: 160px;
     height: 160px;
     border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.hero-photo-wrap::after {
+    content: 'MW';
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: sans-serif;
+    letter-spacing: 2px;
+    position: absolute;
+    pointer-events: none;
+}
+
+.hero-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
     object-fit: cover;
     object-position: center top;
-    border: 2px solid var(--border);
-    flex-shrink: 0;
+    z-index: 1;
 }
 
 .hero-info { flex: 1; }
@@ -774,14 +800,14 @@ footer {
 
     section:not(#hero) { padding: 56px 24px; }
 
-    .hero-photo { width: 130px; height: 130px; }
+    .hero-photo-wrap { width: 130px; height: 130px; }
     .hero-card  { gap: 32px; }
     .affil-item { font-size: 0.9rem; }
     .affil-logo { height: 28px; }
 }
 
 @media (max-width: 760px) {
-    .hero-photo { width: 110px; height: 110px; }
+    .hero-photo-wrap { width: 110px; height: 110px; }
     .hero-card  { gap: 24px; }
     .hero-contact { grid-template-columns: repeat(2, max-content); }
     .hero-title { font-size: 0.9rem; }
@@ -795,7 +821,7 @@ footer {
     #hero { padding: 80px 20px 48px; }
 
     .hero-card { flex-direction: column; align-items: center; text-align: center; gap: 20px; }
-    .hero-photo { width: 100px; height: 100px; }
+    .hero-photo-wrap { width: 100px; height: 100px; }
     .hero-name  { letter-spacing: 2px; }
     .hero-name-row   { justify-content: center; }
     .hero-affiliations { justify-content: center; }
@@ -948,10 +974,10 @@ footer {
 }
 
 /* Hero photo hover */
-.hero-photo {
+.hero-photo-wrap {
     transition: box-shadow 0.25s ease;
 }
-.hero-photo:hover {
+.hero-photo-wrap:hover {
     box-shadow: 0 0 0 4px rgba(29, 69, 85, 0.18);
 }
 
@@ -1016,6 +1042,6 @@ footer {
     .reveal { opacity: 1; transform: none; transition: none; }
     .timeline-content, .exp-card, .pub-item, .skill-group, .contact-item,
     .skill-tag, .hero-tags span, .contact-icon, .timeline-dot, .pub-badge,
-    .btn-primary, .btn-secondary, .about-card, .hero-photo, .nav-links { transition: none; }
+    .btn-primary, .btn-secondary, .about-card, .hero-photo-wrap, .nav-links { transition: none; }
     .hamburger span { transition: none; }
 }

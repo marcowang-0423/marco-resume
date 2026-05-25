@@ -35,6 +35,13 @@ a { color: var(--accent-mid); text-decoration: none; }
 a:hover { text-decoration: underline; }
 strong { color: var(--heading); }
 
+/* Focus ring for keyboard navigation */
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
 /* ===== Navbar ===== */
 #navbar {
     position: fixed;
@@ -1008,4 +1015,5 @@ footer {
     .reveal { opacity: 1; transform: none; transition: none; }
     .timeline-content, .exp-card, .pub-item, .skill-group, .contact-item,
     .skill-tag, .hero-tags span, .contact-icon, .timeline-dot, .pub-badge { transition: none; }
+    .hamburger span { transition: none; }
 }

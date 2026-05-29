@@ -93,3 +93,25 @@ window.addEventListener('scroll', () => {
 backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
+
+// ── GitHub Repos ────────────────────────────────────────────────────────────
+const reposGrid = document.getElementById('repos-grid');
+if (reposGrid) {
+    fetch('assets/repos.json')
+        .then(r => r.json())
+        .then(repos => {
+            if (!repos.length) { reposGrid.innerHTML = ''; return; }
+            reposGrid.innerHTML = repos.map(repo => `
+                <a class="repo-card reveal" href="${repo.html_url}" target="_blank" rel="noopener noreferrer">
+                    <div class="repo-name">${repo.name}</div>
+                    ${repo.description ? `<p class="repo-desc">${repo.description}</p>` : ''}
+                    <div class="repo-meta">
+                        ${repo.language ? `<span class="repo-lang">${repo.language}</span>` : ''}
+                        ${repo.stargazers_count > 0 ? `<span>&#9733; ${repo.stargazers_count}</span>` : ''}
+                    </div>
+                </a>
+            `).join('');
+            reposGrid.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+        })
+        .catch(() => { reposGrid.innerHTML = ''; });
+}

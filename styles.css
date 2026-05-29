@@ -695,6 +695,61 @@ section:nth-of-type(even):not(#hero) {
     font-size: 0.85rem;
 }
 
+/* ===== GitHub Projects ===== */
+.repos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 14px;
+}
+.repos-loading {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    grid-column: 1 / -1;
+}
+.repo-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.repo-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(14,27,44,0.12);
+    border-color: var(--accent);
+}
+.repo-name {
+    font-family: var(--mono);
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--accent);
+}
+.repo-desc {
+    font-size: 0.87rem;
+    color: var(--text-secondary, var(--text-muted));
+    line-height: 1.55;
+    flex: 1;
+    margin: 0;
+}
+.repo-meta {
+    display: flex;
+    gap: 12px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+.repo-lang::before {
+    content: '● ';
+    font-size: 0.65rem;
+    vertical-align: middle;
+}
+
 /* ===== Contact ===== */
 .contact-grid {
     display: grid;
@@ -865,7 +920,7 @@ footer {
     .nav-links li { width: 100%; }
     .nav-links a  { display: block; padding: 10px 14px; border-radius: var(--radius); }
     .nav-links.open {
-        max-height: 320px;
+        max-height: 380px;
         opacity: 1;
         pointer-events: auto;
         transform: translateY(0);
@@ -899,7 +954,7 @@ footer {
     .lang-en .nav-links li { width: 100%; }
     .lang-en .nav-links a { display: block; padding: 10px 14px; border-radius: var(--radius); }
     .lang-en .nav-links.open {
-        max-height: 320px;
+        max-height: 380px;
         opacity: 1;
         pointer-events: auto;
         transform: translateY(0);
@@ -1042,6 +1097,7 @@ footer {
     .reveal { opacity: 1; transform: none; transition: none; }
     .timeline-content, .exp-card, .pub-item, .skill-group, .contact-item,
     .skill-tag, .hero-tags span, .contact-icon, .timeline-dot, .pub-badge,
-    .btn-primary, .btn-secondary, .about-card, .hero-photo-wrap, .nav-links { transition: none; }
+    .btn-primary, .btn-secondary, .about-card, .hero-photo-wrap, .nav-links,
+    .repo-card { transition: none; }
     .hamburger span { transition: none; }
 }

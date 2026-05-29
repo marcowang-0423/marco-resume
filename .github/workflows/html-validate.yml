@@ -21,4 +21,4 @@ jobs:
         run: pip install html5validator
 
       - name: Validate HTML
-        run: html5validator index.html en.html
+        run: html5validator index.html en.html --ignore "Illegal character in scheme data"

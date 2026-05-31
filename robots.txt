@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://marcowang-0423.github.io/marco-resume/sitemap.xml

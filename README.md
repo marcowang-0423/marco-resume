@@ -1,52 +1,57 @@
-# Personal Profile Site
+# Marco Wang — Personal Resume Website
 
-This is a simple personal profile website that showcases an individual's profile, skills, and contact information. The project is structured to provide a clean and responsive design.
+Bilingual (zh-TW / EN) static resume site deployed on **GitHub Pages**.
 
-## Project Structure
+Live: https://marcowang-0423.github.io/marco-resume/
+
+## Structure
 
 ```
-personal-profile-site
-├── src
-│   ├── index.html       # Main HTML document for the personal profile site
-│   ├── styles.css       # CSS styles for the personal profile site
-│   ├── script.js        # JavaScript code for interactive elements
-│   └── assets           # Directory for images and media files
-├── package.json         # Configuration file for npm
-├── README.md            # Documentation for the project
-└── .gitignore           # Files and directories to be ignored by Git
+personal-profile-site/
+├── index.html              # 中文版
+├── en.html                 # English version
+├── styles.css              # All styles (dark mode + print included)
+├── script.js               # Navbar, scroll reveal, contact form, GitHub repos
+├── sitemap.xml             # SEO sitemap
+├── robots.txt              # SEO robots
+├── assets/
+│   ├── profile.jpg         # Hero photo
+│   ├── resume.pdf          # 中文 CV
+│   ├── resume_en.pdf       # English CV
+│   ├── nthu-logo.png/webp  # NTHU logo
+│   ├── mnet-logo.png/webp  # Lab logo
+│   ├── ieee-globecom-logo.png/webp
+│   └── repos.json          # Auto-updated by GitHub Actions
+└── .github/
+    ├── lighthouserc.json
+    └── workflows/
+        ├── lighthouse.yml      # Lighthouse CI on every push
+        ├── html-validate.yml   # W3C HTML validation on every push
+        ├── link-check.yml      # Weekly external link checker
+        └── fetch-repos.yml     # Daily GitHub repo list update
 ```
 
-## Getting Started
+## Local Development
 
-To get started with the personal profile site, follow these steps:
+```bash
+cd personal-profile-site
+python -m http.server 8080
+# open http://localhost:8080
+```
 
-1. **Clone the repository**:
-   ```
-   git clone <repository-url>
-   ```
+> Opening `index.html` directly with `file://` will break `fetch()` calls (repos, contact form). Always use a local server.
 
-2. **Navigate to the project directory**:
-   ```
-   cd personal-profile-site
-   ```
+## Contact Form Setup (Formspree)
 
-3. **Install dependencies** (if any):
-   ```
-   npm install
-   ```
+1. Sign up at [formspree.io](https://formspree.io) and create a new form
+2. Copy your form endpoint (e.g. `https://formspree.io/f/xpzgkwoj`)
+3. Replace `YOUR_FORM_ID` in both `index.html` and `en.html`
 
-4. **Open the `index.html` file** in your web browser to view the site.
+## GitHub Actions
 
-## Features
-
-- Profile section to introduce yourself
-- Skills section to highlight your abilities
-- Contact information for potential inquiries
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a pull request or open an issue for any suggestions or improvements.
-
-## License
-
-This project is open-source and available under the [MIT License](LICENSE).
+| Workflow | Trigger | Purpose |
+|----------|---------|---------|
+| `lighthouse.yml` | push / PR to main | Performance & accessibility audit |
+| `html-validate.yml` | push / PR to main | W3C HTML validation |
+| `link-check.yml` | every Monday | External link health check |
+| `fetch-repos.yml` | push + daily | Updates `assets/repos.json` with latest GitHub repos |

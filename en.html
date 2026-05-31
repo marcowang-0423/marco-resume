@@ -18,6 +18,7 @@
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#1d4555">
     <link rel="canonical" href="https://marcowang-0423.github.io/marco-resume/en.html">
+    <link rel="sitemap" type="application/xml" href="/marco-resume/sitemap.xml">
     <link rel="alternate" hreflang="zh-TW" href="https://marcowang-0423.github.io/marco-resume/">
     <link rel="alternate" hreflang="en" href="https://marcowang-0423.github.io/marco-resume/en.html">
     <link rel="alternate" hreflang="x-default" href="https://marcowang-0423.github.io/marco-resume/">
@@ -53,6 +54,7 @@
     </script>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital@1&family=Noto+Sans+TC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body class="lang-en">
@@ -69,6 +71,7 @@
                 <li><a href="#courses">Courses</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-right">
                 <a href="index.html" class="lang-toggle" aria-label="切換至中文版">中</a>
@@ -93,12 +96,18 @@
                     </div>
                     <div class="hero-affiliations">
                         <span class="affil-item">
-                            <img src="assets/nthu-logo.png" class="affil-logo" alt="NTHU">
+                            <picture>
+                                <source srcset="assets/nthu-logo.webp" type="image/webp">
+                                <img src="assets/nthu-logo.png" class="affil-logo" alt="NTHU">
+                            </picture>
                             <span>National Tsing Hua University</span>
                         </span>
                         <span class="affil-sep" aria-hidden="true">·</span>
                         <span class="affil-item">
-                            <img src="assets/mnet-logo.png" class="affil-logo" alt="Multimedia Network Lab">
+                            <picture>
+                                <source srcset="assets/mnet-logo.webp" type="image/webp">
+                                <img src="assets/mnet-logo.png" class="affil-logo" alt="Multimedia Network Lab">
+                            </picture>
                             <span>Multimedia Network Lab</span>
                         </span>
                     </div>
@@ -256,7 +265,10 @@
                     <div class="pub-list">
                         <div class="pub-item">
                             <div class="pub-badge pub-journal">
-                                <img src="assets/ieee-globecom-logo.png" class="badge-logo" alt="IEEE GLOBECOM">
+                                <picture>
+                                    <source srcset="assets/ieee-globecom-logo.webp" type="image/webp">
+                                    <img src="assets/ieee-globecom-logo.png" class="badge-logo" alt="IEEE GLOBECOM" loading="lazy">
+                                </picture>
                             </div>
                             <div class="pub-content">
                                 <p>"Social Internet of Things Selection and Grouping in Rate Splitting Multiple Access Network"</p>
@@ -394,6 +406,37 @@
             <h2 id="projects-title" class="section-title"><span class="section-num" aria-hidden="true">07</span> GitHub Projects</h2>
             <div class="repos-grid" id="repos-grid">
                 <p class="repos-loading">Loading…</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Contact Form ===== -->
+    <section id="contact" aria-labelledby="contact-title">
+        <div class="container">
+            <h2 id="contact-title" class="section-title"><span class="section-num" aria-hidden="true">08</span> Contact</h2>
+            <div class="contact-form-wrap">
+                <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name <span aria-hidden="true">*</span></label>
+                            <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email <span aria-hidden="true">*</span></label>
+                            <input type="email" id="email" name="email" required autocomplete="email" placeholder="your@email.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="Collaboration / Job opportunity …">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message <span aria-hidden="true">*</span></label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Write your message here…"></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary form-submit">Send Message</button>
+                    <p class="form-note" aria-live="polite"></p>
+                </form>
             </div>
         </div>
     </section>

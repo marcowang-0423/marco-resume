@@ -94,6 +94,45 @@ backToTop.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
+// ── Contact form ────────────────────────────────────────────────────────────
+const contactForm = document.querySelector('.contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const note    = contactForm.querySelector('.form-note');
+        const btn     = contactForm.querySelector('.form-submit');
+        const data    = new FormData(contactForm);
+        note.className = 'form-note';
+        note.textContent = '';
+        btn.disabled = true;
+        btn.textContent = btn.textContent.includes('Send') ? 'Sending…' : '傳送中…';
+        try {
+            const res = await fetch(contactForm.action, {
+                method: 'POST', body: data, headers: { Accept: 'application/json' }
+            });
+            if (res.ok) {
+                note.className = 'form-note success';
+                note.textContent = contactForm.action.includes('YOUR_FORM_ID')
+                    ? '⚠ 尚未設定 Formspree ID，請先完成設定'
+                    : (document.documentElement.lang === 'en'
+                        ? 'Message sent! I\'ll get back to you soon.'
+                        : '訊息已送出！我會盡快回覆您。');
+                if (!contactForm.action.includes('YOUR_FORM_ID')) contactForm.reset();
+            } else {
+                throw new Error();
+            }
+        } catch {
+            note.className = 'form-note error';
+            note.textContent = document.documentElement.lang === 'en'
+                ? 'Something went wrong. Please try again or email me directly.'
+                : '送出失敗，請再試一次或直接寄信給我。';
+        } finally {
+            btn.disabled = false;
+            btn.textContent = document.documentElement.lang === 'en' ? 'Send Message' : '送出訊息';
+        }
+    });
+}
+
 // ── GitHub Repos ────────────────────────────────────────────────────────────
 const reposGrid = document.getElementById('repos-grid');
 if (reposGrid) {

@@ -18,6 +18,7 @@ jobs:
           args: >
             --verbose
             --no-progress
+            --base https://marcowang-0423.github.io
             --exclude 'linkedin\.com'
             --exclude '^mailto:'
             --exclude '^tel:'

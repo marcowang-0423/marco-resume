@@ -1,0 +1,44 @@
+---
+# Deployment：告訴 K8s 要跑幾個 container、用哪個 image
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: marco-resume
+  labels:
+    app: marco-resume
+spec:
+  replicas: 2           # 同時跑 2 個 container，一個死掉另一個繼續服務
+  selector:
+    matchLabels:
+      app: marco-resume
+  template:
+    metadata:
+      labels:
+        app: marco-resume
+    spec:
+      containers:
+        - name: marco-resume
+          image: ghcr.io/marcowang-0423/marco-resume:latest
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: "50m"      # 最少需要 0.05 顆 CPU
+              memory: "32Mi"
+            limits:
+              cpu: "100m"     # 最多用 0.1 顆 CPU
+              memory: "64Mi"
+
+---
+# Service：把外部流量導進 Deployment 管理的 container
+apiVersion: v1
+kind: Service
+metadata:
+  name: marco-resume
+spec:
+  selector:
+    app: marco-resume   # 找標籤是 marco-resume 的 Pod
+  ports:
+    - port: 80
+      targetPort: 80
+  type: LoadBalancer    # 本機用 minikube tunnel 取得外部 IP

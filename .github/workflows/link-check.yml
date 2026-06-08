@@ -18,10 +18,11 @@ jobs:
           args: >
             --verbose
             --no-progress
-            --base https://marcowang-0423.github.io
+            --base https://marcowang-0423.github.io/marco-resume/
             --exclude 'linkedin\.com'
             --exclude '^mailto:'
             --exclude '^tel:'
+            --exclude 'formspree\.io'
             --timeout 30
             --max-retries 3
             '*.html'

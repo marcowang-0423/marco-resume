@@ -118,3 +118,34 @@ DONE
 
 關機後資料（K3s、pod 設定、swap 設定）都保留在硬碟（EBS）上，
 下次 Start 時會自動恢復，只是 IP 會換新的（回到「第 3 節：重新啟動流程」）。
+
+---
+
+## 5. 修改部署設定（更新網站版本 / 調整設定）
+
+### 情境 A：網站內容更新了，要套用新版 image（最常見）
+
+push 程式碼到 GitHub 後，CI 會自動 build 新的 Docker image 並推到 ghcr.io（tag 還是 `latest`）。
+但 K3s 不會自動發現「`latest` 背後的內容變了」，需要手動告訴它重新抓：
+
+```bash
+sudo k3s kubectl rollout restart deployment marco-resume
+```
+
+| 指令 | 用途 |
+|---|---|
+| `sudo k3s kubectl rollout restart deployment marco-resume` | 讓 K8s 重新建立所有 pod（image tag 是 `latest`，重建時會重新 pull 最新版本） |
+| `sudo k3s kubectl rollout status deployment marco-resume` | 即時查看更新進度，看到 `successfully rolled out` 代表完成 |
+
+K8s 會做 **rolling update**：先建立新 pod、確認 `Running` 且健康後，才刪除舊 pod —— 過程中網站不會中斷。
+
+### 情境 B：改 YAML 設定本身（例如調整 replica 數量、資源限制）
+
+1. 編輯本機 [k8s/deployment.yml](deployment.yml)（例如把 `replicas: 2` 改成 `replicas: 3`）
+2. 用前面的 heredoc 方法，把新內容覆寫到 EC2 的 `/tmp/deploy.yml`
+3. 重新套用：
+   ```bash
+   sudo k3s kubectl apply -f /tmp/deploy.yml
+   ```
+
+`kubectl apply` 是「**比對差異、只調整變動的部分**」，不是整個重來 —— 例如把 replicas 從 2 改成 3，K8s 只會多開 1 個 pod，原本 2 個不受影響。

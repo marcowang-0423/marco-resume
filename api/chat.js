@@ -1,7 +1,8 @@
-import Anthropic from "@anthropic-ai/sdk";
-import resumeData from "../assets/resume-data.json" assert { type: "json" };
+const Anthropic = require("@anthropic-ai/sdk").default;
+const { readFileSync } = require("fs");
+const { join } = require("path");
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
@@ -19,6 +20,10 @@ export default async function handler(req, res) {
   }
 
   try {
+    const resumeDataPath = join(process.cwd(), "assets", "resume-data.json");
+    const resumeDataRaw = readFileSync(resumeDataPath, "utf-8");
+    const resumeData = JSON.parse(resumeDataRaw);
+
     const client = new Anthropic({
       apiKey: process.env.ANTHROPIC_API_KEY,
     });

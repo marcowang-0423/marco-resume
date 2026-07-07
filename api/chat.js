@@ -34,7 +34,7 @@ export default async function handler(req, res) {
 ${JSON.stringify(resumeData, null, 2)}`;
 
     const response = await client.messages.create({
-      model: "claude-opus-4-8",
+      model: "claude-3-5-sonnet-20241022",
       max_tokens: 1024,
       system: systemPrompt,
       messages: [

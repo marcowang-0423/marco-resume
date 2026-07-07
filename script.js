@@ -163,7 +163,8 @@ const chatInput = document.getElementById('chat-input');
 const chatSend = document.getElementById('chat-send');
 const chatMessages = document.getElementById('chat-messages');
 
-if (chatToggle) {
+if (chatToggle && chatContainer && chatClose) {
+    // 打開/關閉聊天
     chatToggle.addEventListener('click', () => {
         const isOpen = !chatContainer.hidden;
         chatContainer.hidden = isOpen;
@@ -171,9 +172,22 @@ if (chatToggle) {
         if (!isOpen) chatInput.focus();
     });
 
-    chatClose.addEventListener('click', () => {
+    // 關閉聊天
+    chatClose.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         chatContainer.hidden = true;
         chatToggle.setAttribute('aria-expanded', 'false');
+    });
+
+    // 外部點擊關閉
+    document.addEventListener('click', (e) => {
+        if (!chatContainer.hidden &&
+            !chatContainer.contains(e.target) &&
+            !chatToggle.contains(e.target)) {
+            chatContainer.hidden = true;
+            chatToggle.setAttribute('aria-expanded', 'false');
+        }
     });
 
     const sendMessage = async () => {
@@ -181,7 +195,7 @@ if (chatToggle) {
         if (!message) return;
 
         chatInput.value = '';
-        chatMessages.innerHTML += `<div class="chat-message user"><p>${message}</p></div>`;
+        chatMessages.innerHTML += `<div class="chat-message user"><p>${escapeHtml(message)}</p></div>`;
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
         try {
@@ -193,7 +207,7 @@ if (chatToggle) {
 
             if (!response.ok) throw new Error('Failed to fetch response');
             const { reply } = await response.json();
-            chatMessages.innerHTML += `<div class="chat-message bot"><p>${reply}</p></div>`;
+            chatMessages.innerHTML += `<div class="chat-message bot"><p>${escapeHtml(reply)}</p></div>`;
         } catch (error) {
             chatMessages.innerHTML += `<div class="chat-message bot"><p>抱歉，發生錯誤。請稍後再試。</p></div>`;
         }
@@ -205,4 +219,11 @@ if (chatToggle) {
     chatInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') sendMessage();
     });
+}
+
+// 防止 XSS
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
 }

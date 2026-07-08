@@ -98,7 +98,7 @@ DONE
 |---|---|---|
 | 1 | AWS Console → EC2 → 勾選 instance → **Instance state → Start instance** | 開機，等狀態變 `Running`、Status check `2/2` |
 | 2 | 在 instance 詳細資訊查看新的 **Public IPv4 address** | 每次開機 IP 都會變 |
-| 3 | `ssh -i marco-resume-key.pem ubuntu@<新IP>`（在 `.ssh` 資料夾下執行） | 連線進去 |
+| 3 | `ssh -i marco-resume-key.pem ubuntu@<新IP>`（在 `.ssh` 資料夾下執行） C:\Users\王思喬\.ssh> | 連線進去 |
 | 4 | `free -h` | 確認 swap 是否還在（已寫入 `/etc/fstab` 後，之後每次開機都會自動有 swap，**這步以後可省略**） |
 | 5 | `sudo k3s kubectl get nodes` | 確認 node 是 `Ready`（K3s 開機自動啟動，不用重新安裝） |
 | 6 | `sudo k3s kubectl get pods` | 確認 2 個 pod 是 `Running`（部署設定保存在硬碟，不用重新 apply） |

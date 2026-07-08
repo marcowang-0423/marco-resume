@@ -5,7 +5,15 @@
     "html_url": "https://github.com/marcowang-0423/marco-resume",
     "language": "HTML",
     "stargazers_count": 0,
-    "updated_at": "2026-07-07T07:13:21Z"
+    "updated_at": "2026-07-08T05:16:34Z"
+  },
+  {
+    "name": "RAG_practice",
+    "description": "",
+    "html_url": "https://github.com/marcowang-0423/RAG_practice",
+    "language": "Python",
+    "stargazers_count": 0,
+    "updated_at": "2026-07-07T09:39:51Z"
   },
   {
     "name": "-stock-radar",
@@ -38,13 +46,5 @@
     "language": null,
     "stargazers_count": 0,
     "updated_at": "2021-04-16T17:33:51Z"
-  },
-  {
-    "name": "shoppingCart-page",
-    "description": "",
-    "html_url": "https://github.com/marcowang-0423/shoppingCart-page",
-    "language": "JavaScript",
-    "stargazers_count": 0,
-    "updated_at": "2021-04-04T13:54:52Z"
   }
 ]
